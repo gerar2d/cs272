@@ -28,6 +28,14 @@ int b = rand() % 9+1;
 
 do
 {
+    if (hscore < 0)
+    {
+        hscore = 0;
+    }
+    if (tscore < 0)
+    {
+        tscore = 0;
+    }
     hscore += moveHare(&hare, &a);
     tscore += moveTortoise(&tortoise, &b);    
     
@@ -78,7 +86,7 @@ int moveHare(int *a, int *b)
     return *a+1;
     break;
     } 
-    cout<<*a<<endl;
+ //   cout<<*a<<endl;
     return *a;
 }
 

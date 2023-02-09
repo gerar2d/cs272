@@ -21,14 +21,17 @@ int main()
 
 void rotate1(int * a, int * b, int * c)
 {
+    int temp;
+    temp = *a;
     *a = *b;
     *b = *c;
-    *c = *a;    
+    *c = temp;    
 }
 
 void rotate2(int & a, int & b, int & c)
 {
+    int temp= a;
     a = b;
     b = c;
-    c = a;
+    c = temp;
 }
