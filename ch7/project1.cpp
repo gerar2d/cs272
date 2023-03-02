@@ -5,8 +5,7 @@ using namespace std;
 
 int moveHare(int *a,int *b);
 int moveTortoise(int *c, int *d);
-//void posTortoise(int *f, int *e);
-void posHare(int *e, int *f);
+void posLine(int *e, int *f);
 
 int main()
 {
@@ -43,11 +42,9 @@ do
     b = rand() % 9+1;
     
     if (hscore != tscore){
-        posHare(&hscore, &tscore);
-        //posTortoise(&tscore);
         
-    /*cout<<"H\t"<<hscore<<endl;
-    cout<<"T\t"<<tscore<<endl;*/
+        posLine(&hscore, &tscore);
+
     }else
         cout<<"OUCH!!!\n";
 
@@ -65,7 +62,7 @@ cout<<"\nTORTOISE WINS!!! YAY!!!\n\n";
 }
 
 
-int moveHare(int *a, int *b)
+int moveTortoise(int *a, int *b)
 {
   
     switch(*b){
@@ -86,11 +83,11 @@ int moveHare(int *a, int *b)
     return *a+1;
     break;
     } 
- //   cout<<*a<<endl;
+
     return *a;
 }
 
-int moveTortoise(int *c, int *d)
+int moveHare(int *c, int *d)
 {
 
     switch(*d){
@@ -118,16 +115,10 @@ int moveTortoise(int *c, int *d)
     return *c;
 }
 
-void posHare(int *e, int *f)
+void posLine(int *e, int *f)
 {
     char line[100] = {'-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-'};
     line[*e] = 'H';
     line[*f] = 'T';
     cout<<line<<endl;
 }
-/*void posTortoise(int *f)
-{
-    char line[500] = {'-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-'};
-    line[*f] = 'T';
-    cout<<line<<endl;
-}*/
