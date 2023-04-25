@@ -23,7 +23,7 @@ void selectionSort(int list[], int  size)
         
         for (int i = (index + 1); i < size; i++)
         {
-            if (list[i] < list[s_index])
+            if (list[index] < list[s_index])
             {
                 s_index = i;
             }
